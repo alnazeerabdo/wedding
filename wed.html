@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>دعوة زفاف يوسف ومريم</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B7355",
+                        secondary: "#C4A35A",
+                        gold: "#D4AF37",
+                        navy: "#1a365d",
+                        "background-light": "#FDF8F3",
+                        "background-dark": "#1C1917",
+                        "paper-light": "#FDF8F3",
+                        "paper-dark": "#292524",
+                    },
+                    fontFamily: {
+                        display: ["'Amiri'", "serif"],
+                        body: ["'Tajawal'", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            50% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+        }
+        
+        .animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
+        .animate-fadeInDown { animation: fadeInDown 1s ease-out forwards; }
+        .animate-scaleIn { animation: scaleIn 1s ease-out forwards; }
+        .animate-slideInRight { animation: slideInRight 1s ease-out forwards; }
+        .animate-slideInLeft { animation: slideInLeft 1s ease-out forwards; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-gold { animation: pulse-gold 2s infinite; }
+        .animate-heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+        
+        .shimmer-text {
+            background: linear-gradient(90deg, #D4AF37 0%, #F4E4BA 25%, #D4AF37 50%, #F4E4BA 75%, #D4AF37 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .golden-border {
+            border: 2px solid transparent;
+            background: linear-gradient(#FDF8F3, #FDF8F3) padding-box,
+                        linear-gradient(135deg, #D4AF37, #F4E4BA, #D4AF37) border-box;
+        }
+        
+        .dark .golden-border {
+            background: linear-gradient(#292524, #292524) padding-box,
+                        linear-gradient(135deg, #D4AF37, #F4E4BA, #D4AF37) border-box;
+        }
+        
+        .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0z' fill='none' stroke='%23D4AF37' stroke-opacity='0.1'/%3E%3C/svg%3E");
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-paper-dark text-primary dark:text-gray-200 font-body transition-colors duration-300 islamic-pattern">
+    
+    <!-- Floating Decorations -->
+    <div class="fixed top-20 left-10 w-16 h-16 opacity-20 animate-float pointer-events-none z-0">
+        <svg viewBox="0 0 100 100" fill="currentColor" class="text-gold">
+            <path d="M50 0 L61 35 L97 35 L68 57 L79 91 L50 70 L21 91 L32 57 L3 35 L39 35 Z"/>
+        </svg>
+    </div>
+    <div class="fixed bottom-40 right-10 w-12 h-12 opacity-20 animate-float delay-300 pointer-events-none z-0">
+        <svg viewBox="0 0 100 100" fill="currentColor" class="text-gold">
+            <path d="M50 0 L61 35 L97 35 L68 57 L79 91 L50 70 L21 91 L32 57 L3 35 L39 35 Z"/>
+        </svg>
+    </div>
+
+    <main class="relative z-10 w-full min-h-screen">
+        <!-- Header Section -->
+        <header class="text-center pt-20 pb-12 relative w-full overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6">
+                <p class="text-base md:text-xl tracking-wide mb-4 font-display text-gold opacity-0 animate-fadeInDown leading-relaxed">وما الحُبُّ إلّا نَظرَةٌ ثُمَّ خَطوَةٌ<br/>تُقَرِّبُ قَلبَين وتُنسي الزَّمانَا</p>
+                <p class="text-sm md:text-base mb-6 text-gray-500 dark:text-gray-400 opacity-0 animate-fadeInDown delay-100">يوم الزفاف المبارك</p>
+                <div class="text-2xl md:text-3xl font-display mb-8 tracking-widest shimmer-text opacity-0 animate-scaleIn delay-200">28 | 06 | 2025</div>
+                <h1 class="text-6xl md:text-8xl font-display font-bold mb-12 text-gray-800 dark:text-white leading-tight opacity-0 animate-fadeInUp delay-300">
+                    يوسف <br class="md:hidden"/> <span class="text-5xl md:text-7xl text-gold px-4 animate-heartbeat inline-block">♥</span> مريم
+                </h1>
+            </div>
+            
+            <!-- Hero Image -->
+            <div class="relative w-full h-[60vh] md:h-[85vh] overflow-hidden mb-12 shadow-2xl group opacity-0 animate-scaleIn delay-400">
+                <img alt="صورة العروسين" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms] ease-out" src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1200&q=80&fit=crop"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
+                <div class="absolute bottom-0 inset-x-0 pt-32 pb-16 px-6 text-white text-center">
+                    <p class="text-lg md:text-2xl font-light leading-relaxed opacity-95 drop-shadow-md max-w-3xl mx-auto font-display">
+                        "أَتاني هَواها قَبلَ أَن أَعرِفَ الهَوى<br/>فَصادَفَ قَلباً خالِياً فَتَمَكَّنا"
+                    </p>
+                </div>
+                <!-- Decorative Corners -->
+                <div class="absolute top-4 left-4 w-20 h-20 border-t-2 border-l-2 border-gold opacity-60"></div>
+                <div class="absolute top-4 right-4 w-20 h-20 border-t-2 border-r-2 border-gold opacity-60"></div>
+                <div class="absolute bottom-4 left-4 w-20 h-20 border-b-2 border-l-2 border-gold opacity-60"></div>
+                <div class="absolute bottom-4 right-4 w-20 h-20 border-b-2 border-r-2 border-gold opacity-60"></div>
+            </div>
+        </header>
+
+        <!-- Countdown Section -->
+        <section class="py-16 px-6 text-center border-t border-gold/20 max-w-7xl mx-auto scroll-reveal">
+            <h2 class="text-3xl md:text-4xl font-display mb-12 text-gray-800 dark:text-gray-100">بقي على الزفاف:</h2>
+            <div id="countdown" class="flex justify-center items-center gap-4 md:gap-8 text-primary dark:text-gray-300 font-display flex-wrap">
+                <div class="flex flex-col items-center w-20 md:w-32 golden-border rounded-xl p-4 card-hover">
+                    <span id="days" class="text-4xl md:text-6xl font-bold text-gold">00</span>
+                    <span class="text-sm md:text-lg uppercase mt-2 text-gray-500 dark:text-gray-400 font-body">يوم</span>
+                </div>
+                <span class="text-2xl md:text-4xl text-gold animate-pulse">:</span>
+                <div class="flex flex-col items-center w-20 md:w-32 golden-border rounded-xl p-4 card-hover">
+                    <span id="hours" class="text-4xl md:text-6xl font-bold text-gold">00</span>
+                    <span class="text-sm md:text-lg uppercase mt-2 text-gray-500 dark:text-gray-400 font-body">ساعة</span>
+                </div>
+                <span class="text-2xl md:text-4xl text-gold animate-pulse">:</span>
+                <div class="flex flex-col items-center w-20 md:w-32 golden-border rounded-xl p-4 card-hover">
+                    <span id="minutes" class="text-4xl md:text-6xl font-bold text-gold">00</span>
+                    <span class="text-sm md:text-lg uppercase mt-2 text-gray-500 dark:text-gray-400 font-body">دقيقة</span>
+                </div>
+                <span class="text-2xl md:text-4xl text-gold animate-pulse">:</span>
+                <div class="flex flex-col items-center w-20 md:w-32 golden-border rounded-xl p-4 card-hover">
+                    <span id="seconds" class="text-4xl md:text-6xl font-bold text-gold">00</span>
+                    <span class="text-sm md:text-lg uppercase mt-2 text-gray-500 dark:text-gray-400 font-body">ثانية</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decorative Divider -->
+        <div class="flex justify-center py-12 scroll-reveal">
+            <svg class="w-32 h-16 text-gold animate-float" viewBox="0 0 120 40" fill="currentColor">
+                <path d="M60 0 L70 15 L60 10 L50 15 Z M40 20 Q60 35 80 20 M30 25 Q60 40 90 25" fill="none" stroke="currentColor" stroke-width="1"/>
+                <circle cx="60" cy="20" r="3"/>
+                <circle cx="40" cy="25" r="2"/>
+                <circle cx="80" cy="25" r="2"/>
+            </svg>
+        </div>
+
+        <!-- Event Details Section -->
+        <section class="py-24 px-8 bg-gradient-to-b from-gold/5 to-transparent w-full scroll-reveal">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-display text-center mb-10 text-gray-800 dark:text-gray-100">
+                    <span class="shimmer-text">زمان ومكان الحفل</span>
+                </h2>
+                <p class="text-center text-lg md:text-2xl mb-20 text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                    يسرنا دعوتكم لحضور حفل زفافنا<br/>
+                    في قاعة الملكية للاحتفالات<br/>
+                    الرياض، حي الملقا، طريق الملك فهد
+                </p>
+                
+                <!-- Map/Location Image -->
+                <div class="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-16 golden-border">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80&fit=crop" alt="قاعة الاحتفالات" class="w-full h-full object-cover"/>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                        <a href="https://maps.google.com" target="_blank" class="bg-gold text-white px-8 py-4 rounded-full font-bold hover:bg-gold/80 transition-all transform hover:scale-110 flex items-center gap-2">
+                            <span class="material-symbols-outlined">location_on</span>
+                            عرض الموقع على الخريطة
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="space-y-8 relative font-display max-w-4xl mx-auto">
+                    <div class="absolute right-[2.5rem] top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold via-gold/50 to-transparent hidden md:block"></div>
+                    
+                    <div class="flex items-center gap-6 group card-hover p-4 rounded-xl">
+                        <div class="w-20 h-20 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/40 transition-all">
+                            <span class="material-symbols-outlined text-3xl text-gold">groups</span>
+                        </div>
+                        <div class="flex-grow">
+                            <span class="text-2xl md:text-3xl font-bold text-gold">07:00 مساءً</span>
+                            <p class="text-xl text-gray-700 dark:text-gray-300 mt-1">استقبال الضيوف</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-6 group card-hover p-4 rounded-xl">
+                        <div class="w-20 h-20 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/40 transition-all">
+                            <span class="material-symbols-outlined text-3xl text-gold">celebration</span>
+                        </div>
+                        <div class="flex-grow">
+                            <span class="text-2xl md:text-3xl font-bold text-gold">08:00 مساءً</span>
+                            <p class="text-xl text-gray-700 dark:text-gray-300 mt-1">بداية الحفل</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-6 group card-hover p-4 rounded-xl">
+                        <div class="w-20 h-20 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/40 transition-all">
+                            <span class="material-symbols-outlined text-3xl text-gold">restaurant</span>
+                        </div>
+                        <div class="flex-grow">
+                            <span class="text-2xl md:text-3xl font-bold text-gold">09:30 مساءً</span>
+                            <p class="text-xl text-gray-700 dark:text-gray-300 mt-1">مأدبة العشاء</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dress Code Section -->
+        <section class="py-20 px-6 text-center scroll-reveal">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-display mb-10 text-gray-800 dark:text-gray-100">
+                    <span class="shimmer-text">قواعد اللباس</span>
+                </h2>
+                <p class="text-base md:text-xl text-gray-600 dark:text-gray-400 mb-16 leading-relaxed max-w-2xl mx-auto">
+                    نرجو الالتزام بالألوان المحددة لخلق تناغم جميل في صور الذكرى
+                </p>
+                <div class="flex justify-center gap-8 md:gap-16 flex-wrap">
+                    <div class="flex flex-col items-center gap-4 card-hover p-4">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-[#D4AF37] shadow-xl border-4 border-white dark:border-gray-700 animate-pulse-gold"></div>
+                        <span class="text-base md:text-xl font-bold text-gray-600 dark:text-gray-300">ذهبي</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 card-hover p-4">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-[#F5F5DC] shadow-xl border-4 border-gold/50"></div>
+                        <span class="text-base md:text-xl font-bold text-gray-600 dark:text-gray-300">بيج</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 card-hover p-4">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-[#FFFFFF] shadow-xl border-4 border-gold/50"></div>
+                        <span class="text-base md:text-xl font-bold text-gray-600 dark:text-gray-300">أبيض</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 card-hover p-4">
+                        <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-[#1a365d] shadow-xl border-4 border-white dark:border-gray-700"></div>
+                        <span class="text-base md:text-xl font-bold text-gray-600 dark:text-gray-300">كحلي</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <div class="w-full py-16 scroll-reveal">
+            <h2 class="text-4xl md:text-5xl font-display text-center mb-12 text-gray-800 dark:text-gray-100">
+                <span class="shimmer-text">لحظاتنا الجميلة</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4 max-w-7xl mx-auto">
+                <div class="overflow-hidden rounded-2xl golden-border card-hover">
+                    <img class="h-64 w-full object-cover transition-all duration-700 hover:scale-110" src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&q=80&fit=crop" alt="صورة 1"/>
+                </div>
+                <div class="overflow-hidden rounded-2xl golden-border card-hover">
+                    <img class="h-64 w-full object-cover transition-all duration-700 hover:scale-110" src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80&fit=crop" alt="صورة 2"/>
+                </div>
+                <div class="overflow-hidden rounded-2xl golden-border card-hover">
+                    <img class="h-64 w-full object-cover transition-all duration-700 hover:scale-110" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80&fit=crop" alt="صورة 3"/>
+                </div>
+                <div class="overflow-hidden rounded-2xl golden-border card-hover">
+                    <img class="h-64 w-full object-cover transition-all duration-700 hover:scale-110" src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=600&q=80&fit=crop" alt="صورة 4"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR Code Section -->
+        <section class="py-20 px-6 bg-gradient-to-b from-transparent via-gold/5 to-transparent scroll-reveal">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-display mb-6 text-gray-800 dark:text-gray-100">
+                    <span class="shimmer-text">رمز الدعوة</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">امسح الرمز للوصول السريع لموقع الدعوة</p>
+                
+                <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                    <div class="bg-white p-8 rounded-3xl shadow-2xl golden-border card-hover">
+                        <div id="qrcode" class="w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"></div>
+                        <p class="mt-4 text-sm text-gray-500">yousefandmarym.com</p>
+                    </div>
+                    
+                    <div class="text-right space-y-4 max-w-sm">
+                        <div class="flex items-center gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl">
+                            <span class="material-symbols-outlined text-gold text-3xl">calendar_month</span>
+                            <div>
+                                <p class="text-sm text-gray-500">التاريخ</p>
+                                <p class="font-bold text-gray-800 dark:text-white">28 يونيو 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl">
+                            <span class="material-symbols-outlined text-gold text-3xl">schedule</span>
+                            <div>
+                                <p class="text-sm text-gray-500">الوقت</p>
+                                <p class="font-bold text-gray-800 dark:text-white">7:00 مساءً</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl">
+                            <span class="material-symbols-outlined text-gold text-3xl">location_on</span>
+                            <div>
+                                <p class="text-sm text-gray-500">المكان</p>
+                                <p class="font-bold text-gray-800 dark:text-white">قاعة الملكية، الرياض</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl">
+                            <span class="material-symbols-outlined text-gold text-3xl">language</span>
+                            <div>
+                                <p class="text-sm text-gray-500">الموقع الإلكتروني</p>
+                                <a href="https://yousefandmarym.com" target="_blank" class="font-bold text-gold hover:underline">yousefandmarym.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comments & Prayers Section -->
+        <section class="py-20 px-6 scroll-reveal">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-display text-center mb-6 text-gray-800 dark:text-gray-100">
+                    <span class="shimmer-text">التهاني والدعوات</span>
+                </h2>
+                <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-12">شاركونا دعواتكم الطيبة وتهانيكم القلبية</p>
+                
+                <!-- Comment Form -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl golden-border mb-12">
+                    <form id="commentForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">الاسم الكريم</label>
+                            <input type="text" id="commenterName" required class="w-full px-4 py-3 rounded-xl border-2 border-gold/30 focus:border-gold focus:ring-0 bg-transparent transition-all" placeholder="أدخل اسمك"/>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">رسالتك ودعواتك</label>
+                            <textarea id="commentText" required rows="4" class="w-full px-4 py-3 rounded-xl border-2 border-gold/30 focus:border-gold focus:ring-0 bg-transparent transition-all resize-none" placeholder="اكتب تهنئتك ودعواتك للعروسين..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-gold to-secondary text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-gold/30 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">send</span>
+                            إرسال التهنئة
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Comments Display -->
+                <div id="commentsContainer" class="space-y-6">
+                    <!-- Sample Comments -->
+                    <div class="bg-white/50 dark:bg-gray-800/50 rounded-2xl p-6 golden-border card-hover">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-gold">person</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-800 dark:text-white">أحمد محمد</h4>
+                                <p class="text-gray-600 dark:text-gray-300 mt-2">بارك الله لكما وبارك عليكما وجمع بينكما في خير! أتمنى لكما حياة سعيدة مليئة بالمودة والرحمة 🤍</p>
+                                <p class="text-sm text-gray-400 mt-3">منذ ساعتين</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/50 dark:bg-gray-800/50 rounded-2xl p-6 golden-border card-hover">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-gold">person</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-800 dark:text-white">سارة العتيبي</h4>
+                                <p class="text-gray-600 dark:text-gray-300 mt-2">اللهم بارك لهما واجمع بينهما بخير! مبروك يا أحلى عروسين 💐</p>
+                                <p class="text-sm text-gray-400 mt-3">منذ 5 ساعات</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/50 dark:bg-gray-800/50 rounded-2xl p-6 golden-border card-hover">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-gold">person</span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-800 dark:text-white">خالد السعود</h4>
+                                <p class="text-gray-600 dark:text-gray-300 mt-2">ألف مبروك! أسأل الله أن يديم عليكما السعادة والهناء ويرزقكما الذرية الصالحة 🌹</p>
+                                <p class="text-sm text-gray-400 mt-3">منذ يوم</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wishes/Requests Section -->
+        <section class="py-20 px-8 mb-16 scroll-reveal">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-display text-center mb-8 text-gray-800 dark:text-gray-100">
+                    <span class="shimmer-text">رجاؤنا إليكم</span>
+                </h2>
+                <ul class="space-y-8 text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed font-body">
+                    <li class="flex gap-6 items-start bg-white/50 dark:bg-gray-800/50 p-6 rounded-2xl golden-border card-hover">
+                        <span class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-gold">mic</span>
+                        </span>
+                        <p>سيكون هناك وقت مخصص للتهاني والكلمات الجميلة خلال الحفل</p>
+                    </li>
+                    <li class="flex gap-6 items-start bg-white/50 dark:bg-gray-800/50 p-6 rounded-2xl golden-border card-hover">
+                        <span class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-gold">child_care</span>
+                        </span>
+                        <p>تم تخصيص قسم خاص للأطفال مع فريق ترفيهي متميز</p>
+                    </li>
+                    <li class="flex gap-6 items-start bg-white/50 dark:bg-gray-800/50 p-6 rounded-2xl golden-border card-hover">
+                        <span class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-gold">local_florist</span>
+                        </span>
+                        <p>نفضل استبدال الورود بالدعاء الصالح والكلمة الطيبة</p>
+                    </li>
+                    <li class="flex gap-6 items-start bg-white/50 dark:bg-gray-800/50 p-6 rounded-2xl golden-border card-hover">
+                        <span class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-gold">photo_camera</span>
+                        </span>
+                        <p>نرجو مشاركة صوركم الجميلة معنا عبر الهاشتاق #زفاف_يوسف_ومريم</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="relative py-20 w-full bg-gradient-to-t from-gold/10 to-transparent">
+            <div class="text-center">
+                <div class="text-6xl md:text-8xl font-display text-gold mb-6 animate-heartbeat inline-block">♥</div>
+                <p class="font-display text-3xl md:text-5xl text-gray-800 dark:text-gray-200 mb-4">يوسف & مريم</p>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">28 | 06 | 2025</p>
+                <p class="font-display text-2xl md:text-3xl text-gold">نتشرف بحضوركم</p>
+                <div class="mt-12 flex justify-center gap-6">
+                    <a href="#" class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
+                        <span class="material-symbols-outlined">share</span>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
+                        <span class="material-symbols-outlined">content_copy</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- RSVP Button -->
+    <button onclick="showRSVP()" class="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-gold to-secondary text-white rounded-full p-5 shadow-2xl hover:shadow-gold/50 transition-all transform hover:scale-110 hover:-translate-y-1 animate-pulse-gold" title="تأكيد الحضور">
+        <span class="material-symbols-outlined text-3xl">check_circle</span>
+    </button>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="fixed inset-0 bg-black/70 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 max-w-md w-full golden-border animate-scaleIn">
+            <h3 class="text-3xl font-display text-center mb-6 text-gold">تأكيد الحضور</h3>
+            <form id="rsvpForm" class="space-y-4">
+                <input type="text" placeholder="الاسم الكريم" required class="w-full px-4 py-3 rounded-xl border-2 border-gold/30 focus:border-gold focus:ring-0 bg-transparent"/>
+                <input type="tel" placeholder="رقم الجوال" required class="w-full px-4 py-3 rounded-xl border-2 border-gold/30 focus:border-gold focus:ring-0 bg-transparent"/>
+                <select required class="w-full px-4 py-3 rounded-xl border-2 border-gold/30 focus:border-gold focus:ring-0 bg-transparent">
+                    <option value="">عدد المرافقين</option>
+                    <option value="0">بدون مرافقين</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4+</option>
+                </select>
+                <div class="flex gap-4 pt-4">
+                    <button type="submit" class="flex-1 bg-gradient-to-r from-gold to-secondary text-white py-3 rounded-xl font-bold hover:shadow-lg transition-all">تأكيد</button>
+                    <button type="button" onclick="hideRSVP()" class="flex-1 border-2 border-gold text-gold py-3 rounded-xl font-bold hover:bg-gold/10 transition-all">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('2025-06-28T19:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // QR Code Generation for yousefandmarym.com
+        document.addEventListener('DOMContentLoaded', function() {
+            const qrContainer = document.getElementById('qrcode');
+            if (qrContainer && typeof QRCode !== 'undefined') {
+                // Clear any existing content
+                qrContainer.innerHTML = '';
+                new QRCode(qrContainer, {
+                    text: "https://yousefandmarym.com",
+                    width: 256,
+                    height: 256,
+                    colorDark: "#D4AF37",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+        });
+
+        // Scroll Reveal Animation
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.scroll-reveal');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('revealed');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // RSVP Modal
+        function showRSVP() {
+            document.getElementById('rsvpModal').classList.remove('hidden');
+            document.getElementById('rsvpModal').classList.add('flex');
+        }
+        
+        function hideRSVP() {
+            document.getElementById('rsvpModal').classList.add('hidden');
+            document.getElementById('rsvpModal').classList.remove('flex');
+        }
+
+        // RSVP Form Submit
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً لتأكيد حضوركم! نتشرف بوجودكم معنا في هذا اليوم المبارك');
+            hideRSVP();
+        });
+
+        // Comment Form Submit
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('commenterName').value;
+            const text = document.getElementById('commentText').value;
+            
+            const newComment = document.createElement('div');
+            newComment.className = 'bg-white/50 dark:bg-gray-800/50 rounded-2xl p-6 golden-border card-hover animate-fadeInUp';
+            newComment.innerHTML = `
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-gold">person</span>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-gray-800 dark:text-white">${name}</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mt-2">${text}</p>
+                        <p class="text-sm text-gray-400 mt-3">الآن</p>
+                    </div>
+                </div>
+            `;
+            
+            const container = document.getElementById('commentsContainer');
+            container.insertBefore(newComment, container.firstChild);
+            
+            document.getElementById('commenterName').value = '';
+            document.getElementById('commentText').value = '';
+            
+            alert('شكراً لتهنئتكم الجميلة! 🤍');
+        });
+
+        // Close modal on outside click
+        document.getElementById('rsvpModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideRSVP();
+            }
+        });
+    </script>
+</body>
+</html>
