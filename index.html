@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>دعوة زفاف يوسف ومريم</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(180, 150, 100, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(180, 150, 100, 0.6); }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .animate-slide-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-700 { animation-delay: 0.7s; }
+        .delay-800 { animation-delay: 0.8s; }
+        
+        .opacity-0-init { opacity: 0; }
+        
+        .golden-gradient {
+            background: linear-gradient(135deg, #D4AF37, #C5A028, #E6C55A, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .golden-border {
+            border-image: linear-gradient(135deg, #D4AF37, #E6C55A, #D4AF37) 1;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .pattern-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Amiri', serif;
+        }
+        
+        .prayer-card {
+            transition: all 0.3s ease;
+        }
+        
+        .prayer-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-stone-100 via-amber-50 to-stone-100 text-stone-800 min-h-screen">
+    <!-- Decorative Pattern Overlay -->
+    <div class="fixed inset-0 pattern-overlay pointer-events-none z-0"></div>
+    
+    <main class="relative z-10 w-full min-h-screen">
+        <!-- Hero Header -->
+        <header class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80" 
+                     alt="خلفية الزفاف" 
+                     class="w-full h-full object-cover"/>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+            </div>
+            
+            <!-- Content -->
+            <div class="relative z-10 text-center px-6 max-w-4xl">
+                <p class="text-amber-200 text-lg md:text-xl tracking-[0.3em] uppercase mb-6 opacity-0-init animate-fade-in-down font-light">
+                    بمناسبة الزفاف السعيد
+                </p>
+                
+                <div class="mb-8 opacity-0-init animate-scale-in delay-200">
+                    <svg class="w-20 h-20 mx-auto text-amber-400 animate-float" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+                
+                <h1 class="text-5xl md:text-8xl font-display font-bold text-white mb-6 opacity-0-init animate-fade-in-up delay-300">
+                    <span class="golden-gradient">يوسف</span>
+                    <span class="text-4xl md:text-6xl text-amber-300 mx-4">&</span>
+                    <span class="golden-gradient">مريم</span>
+                </h1>
+                
+                <div class="flex items-center justify-center gap-4 mb-8 opacity-0-init animate-fade-in delay-500">
+                    <div class="h-px w-16 md:w-32 bg-gradient-to-r from-transparent to-amber-400"></div>
+                    <span class="text-2xl md:text-3xl font-display text-amber-200 tracking-widest">28 | 06 | 2025</span>
+                    <div class="h-px w-16 md:w-32 bg-gradient-to-l from-transparent to-amber-400"></div>
+                </div>
+                
+                <p class="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed opacity-0-init animate-fade-in-up delay-600">
+                    يسرنا دعوتكم لمشاركتنا فرحة زفافنا وبداية حياتنا الجديدة معًا
+                </p>
+                
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0-init animate-fade-in delay-800">
+                    <div class="animate-float">
+                        <span class="material-symbols-outlined text-amber-300 text-4xl">keyboard_arrow_down</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Countdown Section -->
+        <section id="countdown" class="py-20 px-6 bg-gradient-to-b from-stone-900 to-stone-800 text-white relative overflow-hidden">
+            <div class="absolute inset-0 pattern-overlay opacity-20"></div>
+            <div class="max-w-5xl mx-auto relative z-10">
+                <h2 class="text-3xl md:text-5xl font-display text-center mb-4 golden-gradient">العد التنازلي</h2>
+                <p class="text-center text-stone-400 mb-12">بقي على موعد زفافنا</p>
+                
+                <div id="countdown-timer" class="flex justify-center items-center gap-3 md:gap-8 flex-wrap">
+                    <div class="countdown-item glass-effect rounded-2xl p-6 md:p-8 min-w-[80px] md:min-w-[140px] text-center animate-pulse-glow">
+                        <span id="days" class="text-4xl md:text-7xl font-bold golden-gradient block">00</span>
+                        <span class="text-sm md:text-lg text-amber-200/80 mt-2 block">يوم</span>
+                    </div>
+                    <span class="text-3xl md:text-5xl text-amber-400 animate-float">:</span>
+                    <div class="countdown-item glass-effect rounded-2xl p-6 md:p-8 min-w-[80px] md:min-w-[140px] text-center animate-pulse-glow">
+                        <span id="hours" class="text-4xl md:text-7xl font-bold golden-gradient block">00</span>
+                        <span class="text-sm md:text-lg text-amber-200/80 mt-2 block">ساعة</span>
+                    </div>
+                    <span class="text-3xl md:text-5xl text-amber-400 animate-float">:</span>
+                    <div class="countdown-item glass-effect rounded-2xl p-6 md:p-8 min-w-[80px] md:min-w-[140px] text-center animate-pulse-glow">
+                        <span id="minutes" class="text-4xl md:text-7xl font-bold golden-gradient block">00</span>
+                        <span class="text-sm md:text-lg text-amber-200/80 mt-2 block">دقيقة</span>
+                    </div>
+                    <span class="text-3xl md:text-5xl text-amber-400 animate-float">:</span>
+                    <div class="countdown-item glass-effect rounded-2xl p-6 md:p-8 min-w-[80px] md:min-w-[140px] text-center animate-pulse-glow">
+                        <span id="seconds" class="text-4xl md:text-7xl font-bold golden-gradient block">00</span>
+                        <span class="text-sm md:text-lg text-amber-200/80 mt-2 block">ثانية</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Event Details Section -->
+        <section class="py-24 px-6 bg-white relative overflow-hidden">
+            <div class="absolute inset-0 pattern-overlay"></div>
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-display mb-4 text-stone-800">تفاصيل الحفل</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <!-- Venue Card -->
+                    <div class="bg-gradient-to-br from-stone-50 to-amber-50 rounded-3xl p-8 shadow-xl border border-amber-200/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <span class="material-symbols-outlined text-white text-3xl">location_on</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-stone-800 mb-4">مكان الحفل</h3>
+                        <p class="text-stone-600 leading-relaxed mb-4">
+                            قاعة الريتز كارلتون<br/>
+                            الرياض، المملكة العربية السعودية<br/>
+                            طريق الملك فهد، حي العليا
+                        </p>
+                        <a href="https://maps.google.com" target="_blank" 
+                           class="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-medium transition-colors">
+                            <span class="material-symbols-outlined">map</span>
+                            عرض على الخريطة
+                        </a>
+                    </div>
+                    
+                    <!-- Date Card -->
+                    <div class="bg-gradient-to-br from-stone-50 to-amber-50 rounded-3xl p-8 shadow-xl border border-amber-200/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <span class="material-symbols-outlined text-white text-3xl">event</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-stone-800 mb-4">موعد الحفل</h3>
+                        <p class="text-stone-600 leading-relaxed mb-2">
+                            <strong>التاريخ:</strong> السبت 28 يونيو 2025
+                        </p>
+                        <p class="text-stone-600 leading-relaxed mb-2">
+                            <strong>الموافق:</strong> 2 محرم 1447 هـ
+                        </p>
+                        <p class="text-stone-600 leading-relaxed">
+                            <strong>الوقت:</strong> الساعة 8:00 مساءً
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline -->
+                <div class="bg-gradient-to-br from-stone-800 to-stone-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
+                    <h3 class="text-2xl md:text-3xl font-display text-center mb-10 golden-gradient">برنامج الحفل</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-6 group">
+                            <span class="text-xl md:text-2xl font-bold text-amber-400 min-w-[80px]">8:00</span>
+                            <div class="w-4 h-4 rounded-full bg-amber-400 group-hover:scale-125 transition-transform"></div>
+                            <span class="text-lg md:text-xl text-stone-300 group-hover:text-white transition-colors">استقبال الضيوف والقهوة العربية</span>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <span class="text-xl md:text-2xl font-bold text-amber-400 min-w-[80px]">9:00</span>
+                            <div class="w-4 h-4 rounded-full bg-amber-400 group-hover:scale-125 transition-transform"></div>
+                            <span class="text-lg md:text-xl text-stone-300 group-hover:text-white transition-colors">دخول العروسين</span>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <span class="text-xl md:text-2xl font-bold text-amber-400 min-w-[80px]">10:00</span>
+                            <div class="w-4 h-4 rounded-full bg-amber-400 group-hover:scale-125 transition-transform"></div>
+                            <span class="text-lg md:text-xl text-stone-300 group-hover:text-white transition-colors">العشاء الفاخر</span>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <span class="text-xl md:text-2xl font-bold text-amber-400 min-w-[80px]">11:30</span>
+                            <div class="w-4 h-4 rounded-full bg-amber-400 group-hover:scale-125 transition-transform"></div>
+                            <span class="text-lg md:text-xl text-stone-300 group-hover:text-white transition-colors">قطع الكيك والتصوير</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section class="py-20 bg-gradient-to-b from-amber-50 to-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-display mb-4 text-stone-800">لحظاتنا الجميلة</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-3xl shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80" 
+                             alt="صورة الزفاف" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                    <div class="overflow-hidden rounded-3xl shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" 
+                             alt="صورة الزفاف" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                    <div class="overflow-hidden rounded-3xl shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&q=80" 
+                             alt="صورة الزفاف" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                    <div class="overflow-hidden rounded-3xl shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80" 
+                             alt="صورة الزفاف" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                    <div class="overflow-hidden rounded-3xl shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=400&q=80" 
+                             alt="صورة الزفاف" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- QR Code Section -->
+        <section class="py-24 px-6 bg-gradient-to-b from-stone-900 to-stone-800 text-white relative overflow-hidden">
+            <div class="absolute inset-0 pattern-overlay opacity-20"></div>
+            <div class="max-w-4xl mx-auto relative z-10 text-center">
+                <h2 class="text-4xl md:text-6xl font-display mb-4 golden-gradient">بطاقة الدعوة</h2>
+                <p class="text-stone-400 mb-12 text-lg">امسح الكود للحصول على تفاصيل الدعوة</p>
+                
+                <div class="inline-block bg-white p-8 rounded-3xl shadow-2xl animate-pulse-glow">
+                    <!-- QR Code using API -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wedding-youssef-mariam.sa&color=7c5c2e&bgcolor=ffffff" 
+                         alt="QR Code للدعوة" 
+                         class="w-48 h-48 md:w-64 md:h-64 mx-auto"/>
+                    <p class="text-stone-600 mt-4 font-medium">wedding-youssef-mariam.sa</p>
+                </div>
+                
+                <div class="mt-12 flex flex-wrap justify-center gap-4">
+                    <a href="#" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-4 rounded-full font-medium hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <span class="material-symbols-outlined">download</span>
+                        تحميل الدعوة
+                    </a>
+                    <a href="#" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur text-white px-8 py-4 rounded-full font-medium hover:bg-white/20 transition-all border border-white/20">
+                        <span class="material-symbols-outlined">share</span>
+                        مشاركة الدعوة
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Dress Code Section -->
+        <section class="py-20 px-6 bg-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-display mb-4 text-stone-800">قواعد اللباس</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full mb-8"></div>
+                <p class="text-stone-600 mb-12 text-lg max-w-2xl mx-auto">
+                    نرجو الالتزام بالألوان التالية لخلق جو أنيق ومتناسق في حفل زفافنا
+                </p>
+                
+                <div class="flex justify-center gap-8 md:gap-16 flex-wrap">
+                    <div class="flex flex-col items-center gap-4 group cursor-pointer">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#C9A227] shadow-xl border-4 border-white group-hover:scale-110 transition-all duration-300 group-hover:shadow-2xl"></div>
+                        <span class="text-lg font-medium text-stone-700">ذهبي</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 group cursor-pointer">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#1C1917] shadow-xl border-4 border-white group-hover:scale-110 transition-all duration-300 group-hover:shadow-2xl"></div>
+                        <span class="text-lg font-medium text-stone-700">أسود</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 group cursor-pointer">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#F5F5DC] shadow-xl border-4 border-stone-200 group-hover:scale-110 transition-all duration-300 group-hover:shadow-2xl"></div>
+                        <span class="text-lg font-medium text-stone-700">بيج</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 group cursor-pointer">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#2F4F4F] shadow-xl border-4 border-white group-hover:scale-110 transition-all duration-300 group-hover:shadow-2xl"></div>
+                        <span class="text-lg font-medium text-stone-700">أخضر داكن</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Comments & Prayers Section -->
+        <section class="py-24 px-6 bg-gradient-to-b from-amber-50 to-stone-100">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-display mb-4 text-stone-800">التهاني والدعوات</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full mb-6"></div>
+                    <p class="text-stone-600 text-lg">شاركونا دعواتكم وتهانيكم الطيبة</p>
+                </div>
+                
+                <!-- Add Comment Form -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl mb-12 border border-amber-100">
+                    <form id="prayerForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-stone-700 font-medium mb-2">الاسم الكريم</label>
+                                <input type="text" id="guestName" required
+                                       class="w-full px-6 py-4 rounded-xl border border-stone-200 focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all outline-none"
+                                       placeholder="أدخل اسمك"/>
+                            </div>
+                            <div>
+                                <label class="block text-stone-700 font-medium mb-2">صلة القرابة</label>
+                                <select id="relation" 
+                                        class="w-full px-6 py-4 rounded-xl border border-stone-200 focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all outline-none">
+                                    <option value="friend">صديق/صديقة</option>
+                                    <option value="relative">قريب/قريبة</option>
+                                    <option value="colleague">زميل/زميلة</option>
+                                    <option value="other">أخرى</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-stone-700 font-medium mb-2">التهنئة أو الدعاء</label>
+                            <textarea id="prayerText" rows="4" required
+                                      class="w-full px-6 py-4 rounded-xl border border-stone-200 focus:border-amber-400 focus:ring-2 focus:ring-amber-200 transition-all outline-none resize-none"
+                                      placeholder="اكتب تهنئتك أو دعائك للعروسين..."></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full md:w-auto bg-gradient-to-r from-amber-500 to-amber-600 text-white px-12 py-4 rounded-xl font-medium hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">send</span>
+                            إرسال التهنئة
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Prayers Display -->
+                <div id="prayersContainer" class="grid md:grid-cols-2 gap-6">
+                    <!-- Sample Prayers -->
+                    <div class="prayer-card bg-white rounded-2xl p-6 shadow-lg border-r-4 border-amber-400">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-lg">أ</div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">أحمد محمد</h4>
+                                <span class="text-sm text-stone-500">صديق العريس</span>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">بارك الله لكما وبارك عليكما وجمع بينكما في خير. أتمنى لكما حياة سعيدة مليئة بالحب والمودة 💍</p>
+                    </div>
+                    
+                    <div class="prayer-card bg-white rounded-2xl p-6 shadow-lg border-r-4 border-amber-400">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-lg">ف</div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">فاطمة العلي</h4>
+                                <span class="text-sm text-stone-500">قريبة العروس</span>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">ألف مبروك! ربي يتمم فرحتكم ويرزقكم الذرية الصالحة. دعواتي لكما بحياة هانئة وسعيدة 🤍</p>
+                    </div>
+                    
+                    <div class="prayer-card bg-white rounded-2xl p-6 shadow-lg border-r-4 border-amber-400">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-lg">س</div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">سارة الحربي</h4>
+                                <span class="text-sm text-stone-500">زميلة العروس</span>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">اللهم بارك لهما واجعل بيتهما عامراً بالسعادة والسكينة. مبروك يا أحلى عروسين! 🌹</p>
+                    </div>
+                    
+                    <div class="prayer-card bg-white rounded-2xl p-6 shadow-lg border-r-4 border-amber-400">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-lg">خ</div>
+                            <div>
+                                <h4 class="font-bold text-stone-800">خالد السعيد</h4>
+                                <span class="text-sm text-stone-500">صديق العريس</span>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">مبروك يا غالي! الله يوفقكم ويسعدكم ويجعل بيتكم جنة. تستاهلون كل خير 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- RSVP Section -->
+        <section class="py-20 px-6 bg-gradient-to-b from-stone-800 to-stone-900 text-white">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-display mb-6 golden-gradient">تأكيد الحضور</h2>
+                <p class="text-stone-400 mb-10">نرجو تأكيد حضوركم قبل تاريخ 15 يونيو 2025</p>
+                
+                <form id="rsvpForm" class="space-y-6">
+                    <input type="text" placeholder="الاسم الكامل" required
+                           class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-stone-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/50 transition-all outline-none"/>
+                    <input type="tel" placeholder="رقم الجوال" required
+                           class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-stone-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/50 transition-all outline-none"/>
+                    <select class="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white focus:border-amber-400 focus:ring-2 focus:ring-amber-400/50 transition-all outline-none">
+                        <option value="" class="text-stone-800">عدد الحضور</option>
+                        <option value="1" class="text-stone-800">شخص واحد</option>
+                        <option value="2" class="text-stone-800">شخصين</option>
+                        <option value="3" class="text-stone-800">ثلاثة أشخاص</option>
+                        <option value="4" class="text-stone-800">أربعة أشخاص</option>
+                    </select>
+                    <button type="submit" 
+                            class="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white py-4 rounded-xl font-bold text-lg hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        تأكيد الحضور
+                    </button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="py-16 px-6 bg-stone-900 text-center relative overflow-hidden">
+            <div class="absolute inset-0 pattern-overlay opacity-10"></div>
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-6xl font-display mb-4 golden-gradient">يوسف & مريم</h2>
+                <p class="text-stone-400 text-lg mb-8">28 يونيو 2025 | الرياض</p>
+                <div class="flex justify-center gap-6 mb-8">
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-amber-500 transition-colors">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-amber-500 transition-colors">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-amber-500 transition-colors">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                </div>
+                <p class="text-stone-500 text-sm">جميع الحقوق محفوظة © 2025</p>
+            </div>
+        </footer>
+    </main>
+    
+    <!-- Floating RSVP Button -->
+    <a href="#rsvpForm" 
+       class="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-full p-5 shadow-2xl hover:from-amber-600 hover:to-amber-700 transition-all transform hover:scale-110 hover:-translate-y-1 animate-pulse-glow">
+        <span class="material-symbols-outlined text-2xl">check_circle</span>
+    </a>
+    
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('2025-06-28T20:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Prayer Form Submission
+        document.getElementById('prayerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('guestName').value;
+            const relation = document.getElementById('relation');
+            const relationText = relation.options[relation.selectedIndex].text;
+            const prayer = document.getElementById('prayerText').value;
+            const initial = name.charAt(0);
+            
+            const prayerCard = document.createElement('div');
+            prayerCard.className = 'prayer-card bg-white rounded-2xl p-6 shadow-lg border-r-4 border-amber-400 animate-fade-in-up';
+            prayerCard.innerHTML = `
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-lg">${initial}</div>
+                    <div>
+                        <h4 class="font-bold text-stone-800">${name}</h4>
+                        <span class="text-sm text-stone-500">${relationText}</span>
+                    </div>
+                </div>
+                <p class="text-stone-600 leading-relaxed">${prayer}</p>
+            `;
+            
+            const container = document.getElementById('prayersContainer');
+            container.insertBefore(prayerCard, container.firstChild);
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('شكراً لتهنئتكم الطيبة! 💍');
+        });
+        
+        // RSVP Form
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً لتأكيد حضوركم! سنكون سعداء بتشريفكم 🎉');
+            this.reset();
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
